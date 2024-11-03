@@ -1,7 +1,7 @@
-package com.rexqwer.demoapp.machine.manager;
+package com.rexqwer.statemachinedemoapp.machine.manager;
 
-import com.rexqwer.demoapp.machine.enums.OrderEvent;
-import com.rexqwer.demoapp.machine.enums.OrderState;
+import com.rexqwer.statemachinedemoapp.machine.enums.OrderEvent;
+import com.rexqwer.statemachinedemoapp.machine.enums.OrderState;
 import com.rexqwer.statemachine.manager.PersistableStateMachineManager;
 import com.rexqwer.statemachine.persist.InMemoryStateMachinePersister;
 import lombok.extern.slf4j.Slf4j;

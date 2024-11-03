@@ -1,11 +1,10 @@
-package com.rexqwer.demoapp.machine.config;
+package com.rexqwer.statemachinedemoapp.machine.config;
 
-import com.rexqwer.demoapp.machine.action.*;
-import com.rexqwer.demoapp.machine.enums.OrderEvent;
-import com.rexqwer.demoapp.machine.enums.OrderState;
-import com.rexqwer.demoapp.machine.guard.StateGuard;
-import com.rexqwer.demoapp.machine.listener.OrderStateMachineApplicationListener;
-import com.rexqwer.demoapp.machine.manager.OrderStateMachineManager;
+import com.rexqwer.statemachinedemoapp.machine.action.*;
+import com.rexqwer.statemachinedemoapp.machine.enums.OrderEvent;
+import com.rexqwer.statemachinedemoapp.machine.enums.OrderState;
+import com.rexqwer.statemachinedemoapp.machine.guard.StateGuard;
+import com.rexqwer.statemachinedemoapp.machine.manager.OrderStateMachineManager;
 import com.rexqwer.statemachine.executor.EventExecutor;
 import com.rexqwer.statemachine.executor.PersistableClearContextEventExecutor;
 import com.rexqwer.statemachine.persist.InMemoryStateMachinePersister;
@@ -14,27 +13,18 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.statemachine.action.Action;
 import org.springframework.statemachine.config.EnableStateMachineFactory;
 import org.springframework.statemachine.config.EnumStateMachineConfigurerAdapter;
-import org.springframework.statemachine.config.builders.StateMachineConfigurationConfigurer;
 import org.springframework.statemachine.config.builders.StateMachineStateConfigurer;
 import org.springframework.statemachine.config.builders.StateMachineTransitionConfigurer;
 import org.springframework.statemachine.guard.Guard;
 
 import java.util.concurrent.ConcurrentHashMap;
 
-import static com.rexqwer.demoapp.machine.enums.OrderEvent.*;
-import static com.rexqwer.demoapp.machine.enums.OrderState.*;
+import static com.rexqwer.statemachinedemoapp.machine.enums.OrderEvent.*;
+import static com.rexqwer.statemachinedemoapp.machine.enums.OrderState.*;
 
 @Configuration
 @EnableStateMachineFactory
 public class StateMachineConfig extends EnumStateMachineConfigurerAdapter<OrderState, OrderEvent> {
-
-
-    @Override
-    public void configure(final StateMachineConfigurationConfigurer<OrderState, OrderEvent> config) throws Exception {
-        config
-                .withConfiguration()
-                .listener(new OrderStateMachineApplicationListener());
-    }
 
     @Override
     public void configure(final StateMachineStateConfigurer<OrderState, OrderEvent> states) throws Exception {

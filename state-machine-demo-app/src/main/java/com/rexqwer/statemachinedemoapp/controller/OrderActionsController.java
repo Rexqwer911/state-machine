@@ -1,7 +1,7 @@
-package com.rexqwer.demoapp.controller;
+package com.rexqwer.statemachinedemoapp.controller;
 
-import com.rexqwer.demoapp.machine.enums.ContextKeys;
-import com.rexqwer.demoapp.machine.enums.OrderEvent;
+import com.rexqwer.statemachinedemoapp.machine.enums.ContextKeys;
+import com.rexqwer.statemachinedemoapp.machine.enums.OrderEvent;
 import com.rexqwer.statemachine.executor.EventExecutor;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -27,7 +27,7 @@ public class OrderActionsController {
         log.info("(controller) event {} completed", event);
     }
 
-    @GetMapping(path = "{orderId}/middle")
+    @PostMapping(path = "{orderId}/middle")
     @Operation(summary = "EVENT MIDDLE")
     public String middle(@PathVariable String orderId) {
         OrderEvent event = OrderEvent.MIDDLE_EVENT;
@@ -40,7 +40,7 @@ public class OrderActionsController {
         return response;
     }
 
-    @GetMapping(path = "{orderId}/fork")
+    @PostMapping(path = "{orderId}/fork")
     @Operation(summary = "EVENT FORK")
     public void fork(@PathVariable String orderId) {
         OrderEvent event = OrderEvent.FORK_EVENT;
@@ -49,7 +49,7 @@ public class OrderActionsController {
         log.info("(controller) event {} completed", event);
     }
 
-    @GetMapping(path = "{orderId}/forkFirst")
+    @PostMapping(path = "{orderId}/forkFirst")
     @Operation(summary = "EVENT FORK FIRST")
     public void forkFirst(@PathVariable String orderId) {
         OrderEvent event = OrderEvent.FORK_FIRST_EVENT;
@@ -58,7 +58,7 @@ public class OrderActionsController {
         log.info("(controller) event {} completed", event);
     }
 
-    @GetMapping(path = "{orderId}/forkSecond")
+    @PostMapping(path = "{orderId}/forkSecond")
     @Operation(summary = "EVENT FORK SECOND")
     public void forkSecond(@PathVariable String orderId) {
         OrderEvent event = OrderEvent.FORK_SECOND_EVENT;
@@ -67,7 +67,7 @@ public class OrderActionsController {
         log.info("(controller) event {} completed", event);
     }
 
-    @GetMapping(path = "{orderId}/finish")
+    @PostMapping(path = "{orderId}/finish")
     @Operation(summary = "EVENT FINISH")
     public void finish(@PathVariable String orderId) {
         OrderEvent event = OrderEvent.FINISH_EVENT;

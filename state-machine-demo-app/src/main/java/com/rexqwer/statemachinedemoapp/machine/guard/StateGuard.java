@@ -1,7 +1,7 @@
-package com.rexqwer.demoapp.machine.guard;
+package com.rexqwer.statemachinedemoapp.machine.guard;
 
-import com.rexqwer.demoapp.machine.enums.OrderEvent;
-import com.rexqwer.demoapp.machine.enums.OrderState;
+import com.rexqwer.statemachinedemoapp.machine.enums.OrderEvent;
+import com.rexqwer.statemachinedemoapp.machine.enums.OrderState;
 import org.springframework.statemachine.StateContext;
 import org.springframework.statemachine.guard.Guard;
 

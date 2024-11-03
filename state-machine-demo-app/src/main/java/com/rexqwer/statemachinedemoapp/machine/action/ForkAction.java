@@ -1,7 +1,7 @@
-package com.rexqwer.demoapp.machine.action;
+package com.rexqwer.statemachinedemoapp.machine.action;
 
-import com.rexqwer.demoapp.machine.enums.OrderEvent;
-import com.rexqwer.demoapp.machine.enums.OrderState;
+import com.rexqwer.statemachinedemoapp.machine.enums.OrderEvent;
+import com.rexqwer.statemachinedemoapp.machine.enums.OrderState;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.statemachine.StateContext;
 import org.springframework.statemachine.action.Action;
@@ -14,7 +14,7 @@ public class ForkAction implements Action<OrderState, OrderEvent> {
         OrderEvent event = OrderEvent.FORK_EVENT;
         log.info("OrderID {}, Starting executing {}", orderId, event);
         try {
-            Thread.sleep(10000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

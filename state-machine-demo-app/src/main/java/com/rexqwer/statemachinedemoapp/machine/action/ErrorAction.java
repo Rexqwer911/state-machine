@@ -1,7 +1,7 @@
-package com.rexqwer.demoapp.machine.action;
+package com.rexqwer.statemachinedemoapp.machine.action;
 
-import com.rexqwer.demoapp.machine.enums.OrderEvent;
-import com.rexqwer.demoapp.machine.enums.OrderState;
+import com.rexqwer.statemachinedemoapp.machine.enums.OrderEvent;
+import com.rexqwer.statemachinedemoapp.machine.enums.OrderState;
 import com.rexqwer.statemachine.keys.DefaultContextKeys;
 import com.rexqwer.statemachine.util.ContextUtils;
 import lombok.extern.slf4j.Slf4j;

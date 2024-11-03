@@ -1,4 +1,4 @@
-package com.rexqwer.demoapp.machine.enums;
+package com.rexqwer.statemachinedemoapp.machine.enums;
 
 public enum OrderState {
     NEW,
